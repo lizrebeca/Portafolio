@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/aos.css"/>
+    <link rel="stylesheet" href="./assets/css/styles.css"/>
+
+    <style>
+        body {
+            background-color: #F2E8DF;
+        }
+
+        .center-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+
+</head>
+<body>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Registrar producto
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="was-validated">
+                        <div class="mb-3">
+                            <label for="validationTextarea" class="form-label">Código</label>
+                            <textarea class="form-control" id="validationTextarea" placeholder="Se requiere código de producto" required></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, digite un código en esta área.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="validationTextarea" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="validationTextarea" placeholder="Digite una descripción del producto" required></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, digite una descripción del producto.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="validationTextarea" class="form-label">Código de barra</label>
+                            <textarea class="form-control" id="validationTextarea" placeholder="Digite un código de barra" required></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, digite un código de barra.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="validationTextarea" class="form-label">Precio unitario</label>
+                            <textarea class="form-control" id="validationTextarea" placeholder="Digite precio unitario" required></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, digite el precio unitario.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="validationTextarea" class="form-label">Stock</label>
+                            <textarea class="form-control" id="validationTextarea" placeholder="Digite el producto en stock" required></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, escriba un producto en stock.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="validationTextarea" class="form-label">Proveedor</label>
+                            <textarea class="form-control" id="validationTextarea" placeholder="Digite el nombre del proveedor" required></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, digite el nombre del proveedor.
+                            </div>
+                        </div>
+
+                        <label for="validationTextarea" class="form-label">Estado</label>
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+                            <label class="form-check-label" for="validationFormCheck1">Activo</label>
+                            <div class="invalid-feedback">Por favor, seleccione si el estado se encuentra activo</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selection" class="form-label">Categoría</label
+              
+                          <div class="form-group">
+                            <select class="form-control" id="selecciona" required>
+                              <option value="">Categoría</option>
+                              <option value="option1">Muebles</option>
+                              <option value="option2">Juguetes</option>
+                              <option value="option3">Electrónicos</option>
+                              <option value="option3">Carpintería</option>
+                            </select>
+                            <div class="valid-feedback">Válido.</div>
+                            <div class="invalid-feedback">Por favor seleccione una categoría.</div>
+                          </div>
+                      </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/aos.js"></script>
+
+    <script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('was-validated');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+
+        (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('was-validated');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
+                        alert("¡Todos los campos están llenos!");
+                           }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+
+    </script>
+</body>
+</html>
